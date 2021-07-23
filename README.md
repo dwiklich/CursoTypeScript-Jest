@@ -44,3 +44,10 @@ describe('Grupo de teste 2', () => {
 
 
 REPOSITORIO GIT: luizomf/typescript-jest-test
+
+package.json -> scripts
+  "test:silent": "jest --watchAll --silent --noStackTrace"
+
+Terminal: npm run test:silent
+para o jest ficar assistindo e atualizando os teste por conta do (--watchAll ), (--silent) para silenciar o console.log dos testes,
+(--noStackTrace) não trazer a pilha de erros de todos os testes

@@ -4,7 +4,7 @@ describe('Grupo de teste 1', () => {
   //primeiro parametro é a descrição, segundo parametro é a funcao para o teste
   it('Descrição do teste (IT)', () => {
     const number = 1;
-    expect(number).not.toBe(1);
+    expect(number).toBe(1);
   });
   test('Descrição do teste (TEST)', () => {
     const nome = 'Daniel';

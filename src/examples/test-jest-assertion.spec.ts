@@ -8,7 +8,10 @@ describe('Primitive value', () => {
     expect(number).not.toBeFalsy();
     expect(number).toBeTruthy();
     // expect(number). toBe varios metodos de teste ja pronto
+  });
 
+  it('should split test', () => {
+    const number = 10;
     expect(number).toBeGreaterThan(9); //toBeGreaterThan maior que
     expect(number).toBeGreaterThanOrEqual(10); //toBeGreaterThan maior ou igual a que
     expect(number).toBeLessThan(11); //toBeGreaterThan menor que
@@ -19,6 +22,19 @@ describe('Primitive value', () => {
     expect(number).not.toBeUndefined();
     expect(number).not.toBeNull();
 
-    expect(number).not.toHaveProperty('toString'); //toHaveProperty ter Propriedade
+    expect(number).toHaveProperty('toString'); //toHaveProperty ter Propriedade
+  });
+});
+
+describe('Objects', () => {
+  it('should test jest assertions with objects', () => {
+    const person = { name: 'Daniel', age: 26 };
+    const aotherPerson = { ...person };
+
+    expect(person).toEqual(aotherPerson);
+    expect(person).not.toHaveProperty('firstName'); //não tem propriedade firstName
+    expect(person).toHaveProperty('age'); //tem propriedade age
+    expect(person).toHaveProperty('age', 26); //tem propriedade age e valor 26
+    expect(person.name).toBe('Daniel'); //toBe em object pega o valor primitivo, por isso person.name
   });
 });

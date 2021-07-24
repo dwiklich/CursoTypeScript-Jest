@@ -49,5 +49,13 @@ package.json -> scripts
   "test:silent": "jest --watchAll --silent --noStackTrace"
 
 Terminal: npm run test:silent
-para o jest ficar assistindo e atualizando os teste por conta do (--watchAll ), (--silent) para silenciar o console.log dos testes,
-(--noStackTrace) não trazer a pilha de erros de todos os testes
+para o jest ficar assistindo e atualizando os teste por conta do (--watchAll ),
+(--silent) para silenciar o console.log dos testes,
+(--noStackTrace) não trazer a pilha de erros de todos os testes.
+
+
+Terminal: npx jest --clearCache
+para limpar o cache dos testes do jest, pq quando se faz muito teste e muda
+muito o codigo dos teste, algo pode ficar em cache e dar bug e mostrar q sempre
+tem erro, por isso é importante limpar o cache para verificar se não é algo
+em cache do jest que esta ocasionando o problema.

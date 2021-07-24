@@ -59,3 +59,9 @@ para limpar o cache dos testes do jest, pq quando se faz muito teste e muda
 muito o codigo dos teste, algo pode ficar em cache e dar bug e mostrar q sempre
 tem erro, por isso é importante limpar o cache para verificar se não é algo
 em cache do jest que esta ocasionando o problema.
+
+----------------------------------------------------------------------------------------------
+
+criando um mock:
+
+class DiscountMock extends Discount {}

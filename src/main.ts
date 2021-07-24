@@ -14,7 +14,7 @@ import { EnterpriseCustomer, IndividualCustomer } from './classes/customer';
 import { NoPercentDiscount } from './classes/discount';
 import { Order } from './classes/order';
 import { Product } from './classes/product';
-import { ShoppingCart } from './classes/shopping-cart copy';
+import { ShoppingCart } from './classes/shopping-cart';
 import { Messaging } from './services/messaging';
 import { Persistency } from './services/persistency';
 

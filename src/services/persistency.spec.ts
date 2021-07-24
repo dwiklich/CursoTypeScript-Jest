@@ -1,20 +1,34 @@
-// tanto it() quanto test() faz a mesmo coisa
-//describe é um grupo de teste
-describe('Grupo de teste 1', () => {
-  //primeiro parametro é a descrição, segundo parametro é a funcao para o teste
-  it('Descrição do teste (IT)', () => {
-    const number = 1;
-    expect(number).toBe(1);
-  });
-  test('Descrição do teste (TEST)', () => {
-    const nome = 'Daniel';
-    expect(nome).toBe('Daniel');
-  });
-});
+import { Persistency } from './persistency';
 
-describe('Grupo de teste 2', () => {
-  test('Descrição do teste (TEST)', () => {
-    const nome = 'Dani';
-    expect(nome).toBe('Dani');
+describe('Persistency', () => {
+  //depois dos testes => limpe todos os mocks
+  afterEach(() => jest.clearAllMocks());
+
+  it('should return undefined', () => {
+    // sut - System under test
+    const sut = new Persistency();
+    expect(sut.saveOrder()).toBeUndefined();
+  });
+
+  it('should call console.log once', () => {
+    const sut = new Persistency();
+
+    // criando um espião jest.spyOn(Objeto, 'metodo');
+    const consoleSpy = jest.spyOn(console, 'log');
+
+    //chamando o metodo q tem o objeto a ser espionado
+    sut.saveOrder();
+
+    expect(consoleSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call console.log with "Pedido salvo com sucesso"', () => {
+    const sut = new Persistency();
+
+    const consoleSpy = jest.spyOn(console, 'log');
+
+    sut.saveOrder();
+
+    expect(consoleSpy).toHaveBeenCalledWith('Pedido salvo com sucesso');
   });
 });
